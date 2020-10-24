@@ -1,10 +1,15 @@
+
 Anoa-Core
 
-by Ahadi Aprianto
-Source Code : https://github.com/ah4d1/anoa-core
-Started     : 24th October 2020
+Copyright(c)2020 Ahadi Aprianto
+License     : GNU General Public License version 2
 
-Anoa-Core is a set of Pascal functions and procedures.
+
+PROJECT DETAILS :
+-------------------------------------
+Started     : 13th October 2020
+Source Code : https://github.com/ah4d1/anoa-core
+
 
 DISCLAIMER :
 -------------------------------------
