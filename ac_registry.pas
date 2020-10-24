@@ -13,7 +13,7 @@ uses
 type
   tacRegistry = object
   public
-    function fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
+    procedure fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
   end;
 
 var
