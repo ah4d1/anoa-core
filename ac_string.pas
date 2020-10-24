@@ -1,11 +1,8 @@
 unit ac_string;
 
 {**************************************************************
-*  Part of Anoa-Core by Ahadi Aprianto                        *
+*  A Part of Anoa-Core                                        *
 *  See https://github.com/ah4d1/anoa-core                     *
-*  The name "Anoa" came from the name of the species endemic  *
-*  to the island of Sulawesi in Indonesia.                    *
-*  See https://en.wikipedia.org/wiki/Anoa                     *
 **************************************************************}
 
 interface
