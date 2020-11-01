@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, Dialogs;
 
 type
-  tacDialog = object
+  tacDialog = class(TComponent)
   public
     procedure fcInfo (AMessage : Widestring); overload;
     procedure fcInfo (ATitle : string; AMessage : Widestring); overload;
@@ -20,7 +20,14 @@ type
 var
   vacDialog : tacDialog;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacDialog]);
+end;
 
 procedure tacDialog.fcInfo (AMessage : Widestring);
 begin
