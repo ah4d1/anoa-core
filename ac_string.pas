@@ -11,13 +11,13 @@ uses
   Classes, SysUtils;
 
 type
-  tacString = class(TComponent)
+  TAcString = class(TComponent)
   public
     function fcSplit (AString : string; ADelimiter : Char) : TStringList;
   end;
 
 var
-  vacString : tacString;
+  vacString : TAcString;
 
 procedure Register;
 
@@ -25,10 +25,10 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacString]);
+  RegisterComponents('AnoaCore',[TAcString]);
 end;
 
-function tacString.fcSplit (AString : string; ADelimiter : Char) : TStringList;
+function TAcString.fcSplit (AString : string; ADelimiter : Char) : TStringList;
 var
   LStrings : TStringList;
 begin
