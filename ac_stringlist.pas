@@ -11,7 +11,7 @@ uses
   Classes, SysUtils;
 
 type
-  tacStringList = object
+  tacStringList = class(TComponent)
   public
     function fcToDelimited (AStringList : TStringList; ADelimiter : Char) : WideString;
   end;
@@ -19,7 +19,14 @@ type
 var
   vacStringList : tacStringList;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacStringList]);
+end;
 
 function tacStringList.fcToDelimited (AStringList : TStringList; ADelimiter : Char) : WideString;
 var
