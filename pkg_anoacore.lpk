@@ -11,7 +11,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="11">
+    <Files Count="12">
       <Item1>
         <Filename Value="ac_app.pas"/>
         <HasRegisterProc Value="True"/>
@@ -67,17 +67,25 @@
         <HasRegisterProc Value="True"/>
         <UnitName Value="ac_synedit"/>
       </Item11>
+      <Item12>
+        <Filename Value="ac_synhighlighter.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_synhighlighter"/>
+      </Item12>
     </Files>
-    <RequiredPkgs Count="3">
+    <RequiredPkgs Count="4">
       <Item1>
-        <PackageName Value="SynEdit"/>
+        <PackageName Value="ExtraHighlighters"/>
       </Item1>
       <Item2>
-        <PackageName Value="LCLBase"/>
+        <PackageName Value="SynEdit"/>
       </Item2>
       <Item3>
-        <PackageName Value="FCL"/>
+        <PackageName Value="LCLBase"/>
       </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
