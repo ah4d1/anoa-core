@@ -11,13 +11,13 @@ uses
   Classes, SysUtils, StdCtrls;
 
 type
-  tacStringList = class(TComponent)
+  TAcStringList = class(TComponent)
   public
     function fcToDelimited (AStringList : TStringList; ADelimiter : Char) : WideString;
   end;
 
 var
-  vacStringList : tacStringList;
+  vacStringList : TAcStringList;
 
 procedure Register;
 
@@ -25,10 +25,10 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacStringList]);
+  RegisterComponents('AnoaCore',[TAcStringList]);
 end;
 
-function tacStringList.fcToDelimited (AStringList : TStringList; ADelimiter : Char) : WideString;
+function TAcStringList.fcToDelimited (AStringList : TStringList; ADelimiter : Char) : WideString;
 var
   i : Integer;
   LString : WideString;
