@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="pkg_anoacore"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="10">
+      <Item1>
+        <Filename Value="ac_app.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_app"/>
+      </Item1>
+      <Item2>
+        <Filename Value="ac_color.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_color"/>
+      </Item2>
+      <Item3>
+        <Filename Value="ac_dialog.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_dialog"/>
+      </Item3>
+      <Item4>
+        <Filename Value="ac_exe.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_exe"/>
+      </Item4>
+      <Item5>
+        <Filename Value="ac_string.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_string"/>
+      </Item5>
+      <Item6>
+        <Filename Value="ac_filedir.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_filedir"/>
+      </Item6>
+      <Item7>
+        <Filename Value="ac_memo.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_memo"/>
+      </Item7>
+      <Item8>
+        <Filename Value="ac_registry.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_registry"/>
+      </Item8>
+      <Item9>
+        <Filename Value="ac_stringlist.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_stringlist"/>
+      </Item9>
+      <Item10>
+        <Filename Value="ac_system.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_system"/>
+      </Item10>
+    </Files>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCLBase"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>
