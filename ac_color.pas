@@ -11,13 +11,13 @@ uses
   Classes, SysUtils, Graphics;
 
 type
-  tacColor = class(TComponent)
+  TAcColor = class(TComponent)
   public
     function fcInvert (AColor: TColor): TColor;
   end;
 
 var
-  vacColor : tacColor;
+  vacColor : TAcColor;
 
 procedure Register;
 
@@ -25,10 +25,10 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacColor]);
+  RegisterComponents('AnoaCore',[TAcColor]);
 end;
 
-function tacColor.fcInvert (AColor: TColor): TColor;
+function TAcColor.fcInvert (AColor: TColor): TColor;
 begin
   Result := clWhite - ColorToRGB(AColor);
     // OR : RGBToColor(255 - Red(AColor), 255- Green(AColor), 255 - Blue(AColor));
