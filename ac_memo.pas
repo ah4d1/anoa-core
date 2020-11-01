@@ -11,13 +11,13 @@ uses
   Classes, SysUtils, StdCtrls;
 
 type
-  tacMemo = class(TComponent)
+  TAcMemo = class(TComponent)
   public
     procedure fcAddLines (AMemo : TMemo; ALines : TStringList);
   end;
 
 var
-  vacMemo : tacMemo;
+  vacMemo : TAcMemo;
 
 procedure Register;
 
@@ -25,10 +25,10 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacMemo]);
+  RegisterComponents('AnoaCore',[TAcMemo]);
 end;
 
-procedure tacMemo.fcAddLines (AMemo : TMemo; ALines : TStringList);
+procedure TAcMemo.fcAddLines (AMemo : TMemo; ALines : TStringList);
 var
   i : Integer;
 begin
