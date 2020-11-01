@@ -11,7 +11,7 @@ uses
   Classes, SysUtils;
 
 type
-  tacApp = object
+  tacApp = class(TComponent)
   public
     function fcGetParam : WideString;
   end;
@@ -19,7 +19,14 @@ type
 var
   vacApp : tacApp;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacApp]);
+end;
 
 // Get params sent to app in a single text
 function tacApp.fcGetParam : WideString;
