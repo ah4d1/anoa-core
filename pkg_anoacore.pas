@@ -9,7 +9,8 @@ interface
 
 uses
   ac_app, ac_color, ac_dialog, ac_exe, ac_string, ac_filedir, ac_memo, 
-  ac_registry, ac_stringlist, ac_system, ac_synedit, LazarusPackageIntf;
+  ac_registry, ac_stringlist, ac_system, ac_synedit, ac_synhighlighter, 
+  LazarusPackageIntf;
 
 implementation
 
@@ -26,6 +27,7 @@ begin
   RegisterUnit('ac_stringlist', @ac_stringlist.Register);
   RegisterUnit('ac_system', @ac_system.Register);
   RegisterUnit('ac_synedit', @ac_synedit.Register);
+  RegisterUnit('ac_synhighlighter', @ac_synhighlighter.Register);
 end;
 
 initialization
