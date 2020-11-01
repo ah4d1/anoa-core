@@ -11,13 +11,13 @@ uses
   Classes, SysUtils;
 
 type
-  tacApp = class(TComponent)
+  TAcApp = class(TComponent)
   public
     function fcGetParam : WideString;
   end;
 
 var
-  vacApp : tacApp;
+  vacApp : TAcApp;
 
 procedure Register;
 
@@ -25,11 +25,11 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacApp]);
+  RegisterComponents('AnoaCore',[TAcApp]);
 end;
 
 // Get params sent to app in a single text
-function tacApp.fcGetParam : WideString;
+function TAcApp.fcGetParam : WideString;
 var
   i : Integer;
   LResult : WideString;
