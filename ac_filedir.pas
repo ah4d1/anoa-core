@@ -11,27 +11,31 @@ uses
   Classes, SysUtils;
 
 type
-  tacFileDir = class(TComponent)
+  TAcFileDir = class(TComponent)
   public
     procedure fcCreateFile (AFileName : TFileName; AText : WideString);
     procedure fcDeleteFile (AFileName : TFileName);
     function fcFileToStringList (AFileName : TFileName) : TStringList;
     function fcTmpFileName : TFileName;
+    function fcIsExt (AFileExt : string; ADefaultFilter : string) : Boolean;
   end;
 
 var
-  vacFileDir : tacFileDir;
+  vacFileDir : TAcFileDir;
 
 procedure Register;
 
 implementation
 
+uses
+  ac_string;
+
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacFileDir]);
+  RegisterComponents('AnoaCore',[TAcFileDir]);
 end;
 
-procedure tacFileDir.fcCreateFile (AFileName : TFileName; AText : WideString);
+procedure TAcFileDir.fcCreateFile (AFileName : TFileName; AText : WideString);
 var
   LF : TextFile;
 begin
@@ -41,12 +45,12 @@ begin
   CloseFile(LF);
 end;
 
-procedure tacFileDir.fcDeleteFile (AFileName : TFileName);
+procedure TAcFileDir.fcDeleteFile (AFileName : TFileName);
 begin
   if FileExists(AFileName) then DeleteFile(AFileName);
 end;
 
-function tacFileDir.fcFileToStringList (AFileName : TFileName) : TStringList;
+function TAcFileDir.fcFileToStringList (AFileName : TFileName) : TStringList;
 var
   LStringList : TStringList;
   LFile : TextFile;
@@ -63,9 +67,31 @@ begin
   Result := LStringList;
 end;
 
-function tacFileDir.fcTmpFileName : TFileName;
+function TAcFileDir.fcTmpFileName : TFileName;
 begin
   Result := GetTempFileName;
+end;
+
+{Is File Ext a member of Default Filter?}
+function TAcFileDir.fcIsExt (AFileExt : string; ADefaultFilter : string) : Boolean;
+var
+  i : Byte;
+  LFilters : TStringList;
+  LExts : TStringList;
+  LFound : Boolean;
+begin
+  LFilters := vacString.fcSplit(ADefaultFilter,'|');
+  LExts := vacString.fcSplit(LFilters[1],';');
+  LFound := False;
+  for i := 0 to LExts.Count - 1 do
+  begin
+    if '*' + AFileExt = LExts[i] then
+    begin
+      LFound := True;
+      Break;
+    end;
+  end;
+  Result := LFound;
 end;
 
 end.
