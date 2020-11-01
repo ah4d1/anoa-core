@@ -11,6 +11,14 @@ Started     : 24th October 2020
 Source Code : https://github.com/ah4d1/anoa-core
 
 
+DEPENDENCIES :
+-------------------------------------
+- FCL Package.
+- LCLBase Package.
+- SynEdit Package.
+- ExtraHighlighters Package, see ExtraSyn at https://github.com/mriscoc/extrasyn
+
+
 DISCLAIMER :
 -------------------------------------
 The name "Anoa" came from the name of the species endemic to the island of Sulawesi in Indonesia.
