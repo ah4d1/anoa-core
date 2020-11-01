@@ -11,7 +11,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="10">
+    <Files Count="11">
       <Item1>
         <Filename Value="ac_app.pas"/>
         <HasRegisterProc Value="True"/>
@@ -62,14 +62,22 @@
         <HasRegisterProc Value="True"/>
         <UnitName Value="ac_system"/>
       </Item10>
+      <Item11>
+        <Filename Value="ac_synedit.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ac_synedit"/>
+      </Item11>
     </Files>
-    <RequiredPkgs Count="2">
+    <RequiredPkgs Count="3">
       <Item1>
-        <PackageName Value="LCLBase"/>
+        <PackageName Value="SynEdit"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="LCLBase"/>
       </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
