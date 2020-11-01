@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, Windows, Dialogs, Forms;
 
 type
-  tacSystem = object
+  tacSystem = class(TComponent)
   public
     procedure fcAddToWinExplorerContextMenu (AMenuTitle : string; AAppExeName : TFileName);
     function fcFindWindow (AWindowTitle : string): HWND;
@@ -21,10 +21,17 @@ type
 var
   vacSystem : tacSystem;
 
+procedure Register;
+
 implementation
 
 uses
   ac_registry;
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacSystem]);
+end;
 
 // Add To Win Explorer Menu
 procedure tacSystem.fcAddToWinExplorerContextMenu (AMenuTitle : string; AAppExeName : TFileName);
