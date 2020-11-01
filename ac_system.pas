@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, Windows, Dialogs, Forms;
 
 type
-  tacSystem = class(TComponent)
+  TAcSystem = class(TComponent)
   public
     procedure fcAddToWinExplorerContextMenu (AMenuTitle : string; AAppExeName : TFileName);
     function fcFindWindow (AWindowTitle : string): HWND;
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  vacSystem : tacSystem;
+  vacSystem : TAcSystem;
 
 procedure Register;
 
@@ -30,17 +30,17 @@ uses
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacSystem]);
+  RegisterComponents('AnoaCore',[TAcSystem]);
 end;
 
 // Add To Win Explorer Menu
-procedure tacSystem.fcAddToWinExplorerContextMenu (AMenuTitle : string; AAppExeName : TFileName);
+procedure TAcSystem.fcAddToWinExplorerContextMenu (AMenuTitle : string; AAppExeName : TFileName);
 begin
   vacRegistry.fcWriteString(HKEY_CLASSES_ROOT,'*\shell\' + AMenuTitle + '\command\',
     '','"' + AAppExeName + '" %1')
 end;
 
-function tacSystem.fcFindWindow (AWindowTitle : string): HWND;
+function TAcSystem.fcFindWindow (AWindowTitle : string): HWND;
 var
   LHWND : HWND;
   LLength : Integer;
@@ -60,7 +60,7 @@ begin
   Result := LHWND;
 end;
 
-function tacSystem.fcIsWindowExist (AWindowTitle : string): Boolean;
+function TAcSystem.fcIsWindowExist (AWindowTitle : string): Boolean;
 var
   LHWND : HWND;
 begin
