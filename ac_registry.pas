@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, Registry;
 
 type
-  tacRegistry = object
+  tacRegistry = class(TComponent)
   public
     procedure fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
   end;
@@ -19,7 +19,14 @@ type
 var
   vacRegistry : tacRegistry;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacRegistry]);
+end;
 
 procedure tacRegistry.fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
 var
