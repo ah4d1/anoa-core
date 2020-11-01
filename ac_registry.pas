@@ -11,13 +11,13 @@ uses
   Classes, SysUtils, Registry;
 
 type
-  tacRegistry = class(TComponent)
+  TAcRegistry = class(TComponent)
   public
     procedure fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
   end;
 
 var
-  vacRegistry : tacRegistry;
+  vacRegistry : TAcRegistry;
 
 procedure Register;
 
@@ -25,10 +25,10 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacRegistry]);
+  RegisterComponents('AnoaCore',[TAcRegistry]);
 end;
 
-procedure tacRegistry.fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
+procedure TAcRegistry.fcWriteString (ARootKey : HKEY; AKey,AName,AValue : string);
 var
   LRegistry : TRegistry;
 begin
