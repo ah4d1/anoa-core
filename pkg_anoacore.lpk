@@ -11,7 +11,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="11">
+    <Files Count="10">
       <Item1>
         <Filename Value="ac_app.pas"/>
         <HasRegisterProc Value="True"/>
@@ -62,11 +62,6 @@
         <HasRegisterProc Value="True"/>
         <UnitName Value="ac_system"/>
       </Item10>
-      <Item11>
-        <Filename Value="ac_synhighlighter.pas"/>
-        <HasRegisterProc Value="True"/>
-        <UnitName Value="ac_synhighlighter"/>
-      </Item11>
     </Files>
     <RequiredPkgs Count="4">
       <Item1>
