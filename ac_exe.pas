@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, Process;
 
 type
-  tacExe = object
+  tacExe = class(TComponent)
   public
     function fcRun (AExeName : string; ACommand : string) : TStringList;
   end;
@@ -19,10 +19,17 @@ type
 var
   vacExe : tacExe;
 
+procedure Register;
+
 implementation
 
 uses
   ac_string;
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacExe]);
+end;
 
 {One command & No Console}
 {Example : fcRun('python','C:/myfile.py')}
