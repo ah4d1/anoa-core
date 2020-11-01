@@ -11,8 +11,8 @@ uses
   Classes, SysUtils, SynEdit, Graphics;
 
 type
-  tseTheme = (seThemeNormal,seThemeDark);
-  tacCustomSynEdit = class(TSynEdit)
+  TSeTheme = (seThemeNormal,seThemeDark);
+  TAcCustomSynEdit = class(TSynEdit)
   private
     FSynEditColor : TColor;
     FSynEditFontColor : TColor;
@@ -21,14 +21,14 @@ type
     FLineHighlightColor : TColor;
     FCommentAttriColor : TColor;
     FKeyAttriColor : TColor;
-    FTheme : tseTheme;
-    function GetTheme : tseTheme;
-    procedure SetTheme (AValue : tseTheme);
+    FTheme : TSeTheme;
+    function GetTheme : TSeTheme;
+    procedure SetTheme (AValue : TSeTheme);
     procedure _DefaultColor;
     procedure _ThemeNormal;
     procedure _ThemeDark;
   public
-    property vTheme : tseTheme read GetTheme write SetTheme default seThemeNormal;
+    property vTheme : TSeTheme read GetTheme write SetTheme default seThemeNormal;
     constructor Create (AOwner: TComponent); override;
     procedure fcUndo;
     procedure fcRedo;
@@ -37,13 +37,13 @@ type
     procedure fcPaste;
     procedure fcSelectAll;
   end;
-  tacSynEdit = class(tacCustomSynEdit)
+  TAcSynEdit = class(TAcCustomSynEdit)
   published
     property vTheme;
   end;
 
 var
-  vacSynEdit : tacSynEdit;
+  vacSynEdit : TAcSynEdit;
 
 procedure Register;
 
@@ -54,51 +54,51 @@ uses
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacSynEdit]);
+  RegisterComponents('AnoaCore',[TAcSynEdit]);
 end;
 
-constructor tacCustomSynEdit.Create (AOwner : TComponent);
+constructor TAcCustomSynEdit.Create (AOwner : TComponent);
 begin
   inherited Create(AOwner);
   Self._DefaultColor;
 end;
 
-procedure tacCustomSynEdit.fcUndo;
+procedure TAcCustomSynEdit.fcUndo;
 begin
   Self.Undo;
 end;
 
-procedure tacCustomSynEdit.fcRedo;
+procedure TAcCustomSynEdit.fcRedo;
 begin
   Self.Redo;
 end;
 
-procedure tacCustomSynEdit.fcCopy;
+procedure TAcCustomSynEdit.fcCopy;
 begin
   Self.CopyToClipboard;
 end;
 
-procedure tacCustomSynEdit.fcCut;
+procedure TAcCustomSynEdit.fcCut;
 begin
   Self.CutToClipboard;
 end;
 
-procedure tacCustomSynEdit.fcPaste;
+procedure TAcCustomSynEdit.fcPaste;
 begin
   Self.PasteFromClipboard;
 end;
 
-procedure tacCustomSynEdit.fcSelectAll;
+procedure TAcCustomSynEdit.fcSelectAll;
 begin
   Self.SelectAll;
 end;
 
-function tacCustomSynEdit.GetTheme : tseTheme;
+function TAcCustomSynEdit.GetTheme : TSeTheme;
 begin
   Result := Self.FTheme;
 end;
 
-procedure tacCustomSynEdit.SetTheme (AValue : tseTheme);
+procedure TAcCustomSynEdit.SetTheme (AValue : TSeTheme);
 begin
   Self.FTheme := AValue;
   if Self.FTheme = seThemeNormal then
@@ -108,7 +108,7 @@ begin
   ;
 end;
 
-procedure tacCustomSynEdit._DefaultColor;
+procedure TAcCustomSynEdit._DefaultColor;
 begin
   Self.FSynEditColor := clWhite;
   Self.FSynEditFontColor := clBlack;
@@ -119,7 +119,7 @@ begin
   Self.FKeyAttriColor := clBlue;
 end;
 
-procedure tacCustomSynEdit._ThemeNormal;
+procedure TAcCustomSynEdit._ThemeNormal;
 begin
   Self.Color := Self.FSynEditColor;
   Self.Font.Color := Self.FSynEditFontColor;
@@ -130,7 +130,7 @@ begin
   Self.FKeyAttriColor := Self.FKeyAttriColor;
 end;
 
-procedure tacCustomSynEdit._ThemeDark;
+procedure TAcCustomSynEdit._ThemeDark;
 begin
   Self.Color := vacColor.fcInvert(Self.FSynEditColor);
   Self.Font.Color := vacColor.fcInvert(Self.FSynEditFontColor);
