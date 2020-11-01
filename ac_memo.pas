@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, StdCtrls;
 
 type
-  tacMemo = object
+  tacMemo = class(TComponent)
   public
     procedure fcAddLines (AMemo : TMemo; ALines : TStringList);
   end;
@@ -19,7 +19,14 @@ type
 var
   vacMemo : tacMemo;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacMemo]);
+end;
 
 procedure tacMemo.fcAddLines (AMemo : TMemo; ALines : TStringList);
 var
