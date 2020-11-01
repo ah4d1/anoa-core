@@ -8,7 +8,7 @@ unit ac_stringlist;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, StdCtrls;
 
 type
   tacStringList = class(TComponent)
