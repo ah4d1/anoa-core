@@ -11,7 +11,7 @@ uses
   Classes, SysUtils, Graphics;
 
 type
-  tacColor = object
+  tacColor = class(TComponent)
   public
     function fcInvert (AColor: TColor): TColor;
   end;
@@ -19,7 +19,14 @@ type
 var
   vacColor : tacColor;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacColor]);
+end;
 
 function tacColor.fcInvert (AColor: TColor): TColor;
 begin
