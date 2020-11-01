@@ -11,13 +11,13 @@ uses
   Classes, SysUtils, Process;
 
 type
-  tacExe = class(TComponent)
+  TAcExe = class(TComponent)
   public
     function fcRun (AExeName : string; ACommand : string) : TStringList;
   end;
 
 var
-  vacExe : tacExe;
+  vacExe : TAcExe;
 
 procedure Register;
 
@@ -28,12 +28,12 @@ uses
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacExe]);
+  RegisterComponents('AnoaCore',[TAcExe]);
 end;
 
 {One command & No Console}
 {Example : fcRun('python','C:/myfile.py')}
-function tacExe.fcRun (AExeName : string; ACommand : string) : TStringList;
+function TAcExe.fcRun (AExeName : string; ACommand : string) : TStringList;
 var
   LOutputString : string;
   LOutputStrings : TStringList;
