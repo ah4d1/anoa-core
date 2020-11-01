@@ -11,14 +11,14 @@ uses
   Classes, SysUtils, Dialogs;
 
 type
-  tacDialog = class(TComponent)
+  TAcDialog = class(TComponent)
   public
     procedure fcInfo (AMessage : Widestring); overload;
     procedure fcInfo (ATitle : string; AMessage : Widestring); overload;
   end;
 
 var
-  vacDialog : tacDialog;
+  vacDialog : TAcDialog;
 
 procedure Register;
 
@@ -26,15 +26,15 @@ implementation
 
 procedure Register;
 begin
-  RegisterComponents('AnoaCore',[tacDialog]);
+  RegisterComponents('AnoaCore',[TAcDialog]);
 end;
 
-procedure tacDialog.fcInfo (AMessage : Widestring);
+procedure TAcDialog.fcInfo (AMessage : Widestring);
 begin
   Self.fcInfo('Information',AMessage);
 end;
 
-procedure tacDialog.fcInfo (ATitle : string; AMessage : Widestring);
+procedure TAcDialog.fcInfo (ATitle : string; AMessage : Widestring);
 begin
   MessageDlg(ATitle,AMessage,mtInformation,[mbOK],0);
 end;
