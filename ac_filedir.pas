@@ -11,7 +11,7 @@ uses
   Classes, SysUtils;
 
 type
-  tacFileDir = object
+  tacFileDir = class(TComponent)
   public
     procedure fcCreateFile (AFileName : TFileName; AText : WideString);
     procedure fcDeleteFile (AFileName : TFileName);
@@ -22,7 +22,14 @@ type
 var
   vacFileDir : tacFileDir;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacFileDir]);
+end;
 
 procedure tacFileDir.fcCreateFile (AFileName : TFileName; AText : WideString);
 var
