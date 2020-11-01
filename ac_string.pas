@@ -11,7 +11,7 @@ uses
   Classes, SysUtils;
 
 type
-  tacString = object
+  tacString = class(TComponent)
   public
     function fcSplit (AString : string; ADelimiter : Char) : TStringList;
   end;
@@ -19,7 +19,14 @@ type
 var
   vacString : tacString;
 
+procedure Register;
+
 implementation
+
+procedure Register;
+begin
+  RegisterComponents('AnoaCore',[tacString]);
+end;
 
 function tacString.fcSplit (AString : string; ADelimiter : Char) : TStringList;
 var
