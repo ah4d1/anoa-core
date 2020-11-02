@@ -15,8 +15,6 @@ DEPENDENCIES :
 -------------------------------------
 - FCL Package.
 - LCLBase Package.
-- SynEdit Package.
-- ExtraHighlighters Package, see ExtraSyn at https://github.com/mriscoc/extrasyn
 
 
 DISCLAIMER :
