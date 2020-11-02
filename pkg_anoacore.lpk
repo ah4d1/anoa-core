@@ -63,19 +63,16 @@
         <UnitName Value="ac_system"/>
       </Item10>
     </Files>
-    <RequiredPkgs Count="4">
+    <RequiredPkgs Count="3">
       <Item1>
-        <PackageName Value="ExtraHighlighters"/>
+        <PackageName Value="SynEdit"/>
       </Item1>
       <Item2>
-        <PackageName Value="SynEdit"/>
+        <PackageName Value="LCLBase"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCLBase"/>
-      </Item3>
-      <Item4>
         <PackageName Value="FCL"/>
-      </Item4>
+      </Item3>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
